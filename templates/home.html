@@ -10,18 +10,20 @@
         height: 360px;
         width: 100%;
         object-fit: cover;
+        margin-bottom: 16px;
       }
     </style>
   </head>
   <body>
+    {% include 'nav.html' %}
+    <img class="img-fluid" id="banner" src="static/banner.jpg">
     <div class="container">
       <h1 class="text-center mt-2 mb-4">Neighborhood Tech Careers </h1>
-      <img class="img-fluid"id="banner" src="static/banner.jpg">
-      <h2 class="text-center mt-2 mb-4">About Us</h2>
+      
       <p class="lead">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
       </p>
-      <h2>Open Positions </h2>
+      <h2 class="text-center mt-2 mb-4">Open Positions </h2>
       <div>
         {% for job in jobs %}
           {% include 'jobitem.html' %}
@@ -31,5 +33,6 @@
         <button class="btn btn-primary btn-lg">Contact Us!</button>
       </div>
     </div>
+    {% include 'footer.html' %}
   </body>
 </html>
