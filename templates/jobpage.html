@@ -2,9 +2,12 @@
 <html>
   <head>
     <title>{{job['title']}} - Neighborhood Careers</title>
+    {% include 'bootstrap.html'%}
   </head>
 
   <body>
+    {% include 'nav.html' %}
+    {% include 'banner.html' %}
     <h3>Title</h3>
     <p>{{job['title']}}</p>
     <h3>Location</h3>
@@ -14,5 +17,6 @@
     <h4>Requirements</h4>
     <p>{{job['requirements']}}</p>
     
+    {% include 'footer.html' %}
   </body>
 </html>

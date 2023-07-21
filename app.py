@@ -4,10 +4,6 @@ from database import load_jobs_from_db, load_job_from_db
 
 app = Flask(__name__)
 
-
-
-
-
 @app.route("/")
 def homepage():
   jobs = load_jobs_from_db()
