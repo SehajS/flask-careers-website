@@ -22,10 +22,14 @@ def show_job(id):
     return "Not Found", 404
   return render_template('jobpage.html', job=job)
 
-@app.route("/job/<id>/apply")
+@app.route("/job/<id>/apply", methods=["post"])
 def apply_to_job(id):
-  data = request.args
-  return jsonify(data)
+  data = request.form
+  job = load_job_from_db(id)
+  # store this in db
+  # send an email
+  # display an acknowledgement
+  return render_template('application_submitted.html', application=data, job=job)
 
 if __name__ == "__main__":
   app.run(host='0.0.0.0', debug=True)
